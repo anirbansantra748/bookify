@@ -107,14 +107,48 @@ let items = [
 },
 {
   id: 9,
-  name: "Garliverse Travels",
+  name: "Atomic Habbits",
   price: 50,
-  author: "Jonathan swift",
-  pdf:"garlivers.pdf",
+  author: "James clear",
+  pdf:"Atomic Habits James Clear.pdf",
   // Add your image URL here
-  image: "/photos/img8.png",
-  description: "Embark on an unforgettable journey across parallel worlds in Garliverse Travels, where adventure, mystery, and alternate realities await.",
-  about:"Garliverse Travels takes readers on an enthralling expedition through parallel universes, where the boundaries of reality blur. Join the intrepid travelers as they navigate intricate plots, encounter diverse cultures, and confront mind-bending challenges across dimensions. This imaginative odyssey offers a captivating blend of adventure and mystery, making it a must-read for those who crave exploration beyond the confines of our known universe.",
+  image: "/photos/img9.png",
+  description: "In Atomic Habits, James Clear unveils the transformative power of tiny changes, guiding readers on a path to remarkable personal growth and success.",
+  about:"Atomic Habits by James Clear is a groundbreaking exploration of the science of habit formation. Clear reveals how even the smallest changes in behavior can lead to remarkable transformations over time. With practical insights and actionable strategies, he guides readers on a journey to identify, build, and sustain positive habits while breaking free from destructive ones. This book offers a clear roadmap to personal growth, productivity, and lasting change, making it an indispensable guide for anyone striving to achieve their goals. ",
+},
+
+{
+  id: 10,
+  name: "Rich Dad poor Dad",
+  price: 50,
+  author: "Robert Kiyosak",
+  pdf:"Rich Dad Poor Dad.pdf",
+  // Add your image URL here
+  image: "/photos/img10.png",
+  description: "Rich Dad Poor Dad by Robert Kiyosaki is a financial classic that challenges conventional wisdom, offering valuable lessons on wealth-building and financial independence.",
+  about:"In Rich Dad Poor Dad, Robert Kiyosaki shares his life lessons learned from two influential father figures - his poor dad (his biological father) and his rich dad(the father of his childhood best friend). Through their contrasting beliefs and approaches to money, Kiyosaki explores key principles of financial literacy and independence. This bestselling book challenges conventional financial wisdom and encourages readers to think differently about wealth, assets, and financial education, making it a must-read for those seeking financial success and stability. ",
+},
+{
+  id: 11,
+  name: "The Da Vinci Code",
+  price: 50,
+  author: "Robert Kiyosak",
+  pdf:"The Da Vinci Code.pdf",
+  // Add your image URL here
+  image: "/photos/img11.png",
+  description: "Dan Brown's The Da Vinci Code is a gripping thriller that unravels ancient mysteries, combining art, religion, and conspiracy in a high-stakes race against time.",
+  about:"In  takes readers on a thrilling quest alongside Robert Langdon, a Harvard professor of symbology, and Sophie Neveu, a French police cryptologist, as they decipher hidden messages within renowned works of art. Racing against a shadowy adversary, they uncover secrets that challenge established religious beliefs. Dan Brown weaves a captivating narrative filled with puzzles, codes, and historical intrigue, making this international bestseller a page-turner that explores the intersection of art, religion, and conspiracy. With its fast-paced plot and thought-provoking revelations, it's a must-read for fans of suspense and intellectual thrillers. ",
+},
+{
+  id: 12,
+  name: "To kill a Mockingbird",
+  price: 50,
+  author: "Harper Lee",
+  pdf:"To Kill a Mockingbird.pdf",
+  // Add your image URL here
+  image: "/photos/mokingbird.png",
+  description: "Harper Lee's novel, To Kill a Mockingbird, explores racial injustice and moral complexities through the eyes of young Scout Finch  .",
+  about:"In To Kill a Mockingbird, set in the American South during the 1930s, the Finch family grapples with racial prejudice and social inequality. Through the perspective of Scout Finch, readers witness the trial of Tom Robinson, an African American man unjustly accused of rape. Harper Lee's storytelling reveals the harsh realities of a divided society while celebrating compassion, integrity, and the enduring power of empathy. This classic novel continues to resonate for its poignant portrayal of injustice and moral courage. ",
 },
 ];
 
@@ -123,6 +157,14 @@ app.get("/bechdo", (req, res) => {
   });
   app.get("/bechdo/catagory", (req, res) => {
     res.render("catagory.ejs");
+  });
+
+  app.get("/bechdo/category/bengali",(req,res)=>{
+    res.render("bengali.ejs",{items});
+  });
+
+  app.get("/bechdo/category/english",(req,res)=>{
+    res.render("english.ejs",{items});
   })
 //login page 
 app.get('/bechdo/login', (req, res) => {

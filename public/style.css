@@ -149,7 +149,7 @@
 }
 
 .dark-mode .product-card {
-    background-color: #737373;
+    background-color: #585858;
     color: #fff;
 }
 .dark-mode #desc{
@@ -334,7 +334,7 @@
 }
 
 #bg{
-    background-image: url("/photos/bg2.jpg");
+    background-image: url("/photos/bg4.jpg");
     background-size: cover;
 }
 
@@ -352,4 +352,29 @@
     background-color: #e55e00;
     color: #000;
     font-size: 2rem;
+}
+
+.main-container2{
+    padding: 10%;
+    background-image: url("/photos/bg.jpg");
+    background-size: cover;
+}
+.category-card{
+    border-radius: 1rem;
+    margin-left: 2.5rem;
+    background-color: rgb(164, 171, 171);
+    width: 250px;
+    height: 400px;
+    padding: 1rem;
+}
+.category-card img{
+    border-radius: 1rem;
+}
+.category-card h2{
+    position: relative;
+    left: 26%;
+}
+.img{
+    width: 100%;
+    
 }
