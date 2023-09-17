@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Fresh Recommendations</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body id="body">
+    <nav class="nav-bar">
+        <img src="/photos/logo.png" id="img" alt="Logo">
+        <ul class="nav-options">
+            <li><a href="/bechdo"><i class="fas fa-home"></i> Home</a></li>
+            <li class="search-container">
+                <input type="text" class="search-input" placeholder="Search">
+                <i class="fas fa-search search-icon"></i>
+            </li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="/bechdo/login">Login</a></li>
+            <li><i id="dark-mode-toggle" class="fa-regular fa-moon mode" style="color: #ffffff;"></i></li>
+            <!-- Hamburger menu icon -->
+            <li id="menu-icon"><i class="fas fa-bars menu"></i></li>
+        </ul>
+    </nav>
+    <h1 class="main-heading">Fresh Recommendations</h1>
+    <div class="main-container">
+        <p class="section-description main-heading">Click on the title to learn more about each book:</p>
+        <div class="product-card-container">
+            <% for(item of items){ %>
+                <!-- Wrap each card in an anchor tag with a link to the detailed view -->
+                <div class="product-card">
+                    <img src="<%= item.image %>" alt="Product Image">
+                    <div class="product-card-content">
+                        <h2><a class="product-title" href="/bechdo/<%= item.id %>">
+                                <%= item.name %>
+                            </a></h2>
+                        <p class="product-author"><b>Author:</b>
+                            <%= item.author %>
+                        </p>
+                        <p class="product-description" id="desc">
+                            <%= item.description %>
+                        </p>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+        <div class="slide-in-menu">
+            <i class="fas fa-times cross" id="close-icon"></i>
+            <a href="#">Favorite</a>
+            <a href="#">Library</a>
+            <a href="/bechdo/catagory">Category</a>
+        </div>
+    </div>
+    <script>
+        // Get references to the moon icon, body element, and menu icon
+        const moonIcon = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+
+        // Add a click event listener to the moon icon
+        moonIcon.addEventListener('click', () => {
+            // Toggle the 'dark-mode' class on the body element
+            body.classList.toggle('dark-mode');
+        });
+
+        // Get references to the menu icon, slide-in menu, and close icon
+        const menuIcon = document.getElementById('menu-icon');
+        const slideInMenu = document.querySelector('.slide-in-menu');
+        const closeIcon = document.getElementById('close-icon');
+
+        // Function to open the slide-in menu
+        function openSlideInMenu() {
+            slideInMenu.classList.add('show-menu');
+        }
+
+        // Function to close the slide-in menu
+        function closeSlideInMenu() {
+            slideInMenu.classList.remove('show-menu');
+        }
+
+        // Add a click event listener to the menu icon to open the menu
+        menuIcon.addEventListener('click', openSlideInMenu);
+
+        // Add a click event listener to the close icon to close the menu
+        closeIcon.addEventListener('click', closeSlideInMenu);
+
+
+
+    </script>
+</body>
+
+</html>

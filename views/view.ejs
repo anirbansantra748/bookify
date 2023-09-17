@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Fresh Recommendations</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body id="bg">
+    <nav class="nav-bar">
+        <img src="/photos/logo.png" id="img" alt="Logo">
+        <ul class="nav-options">
+            <li><a href="/bechdo"><i class="fas fa-home"></i> Home</a></li>
+            <li class="search-container">
+                <input type="text" class="search-input" placeholder="Search">
+                <i class="fas fa-search search-icon"></i>
+            </li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="#">Login</a></li>
+            <li><i id="dark-mode-toggle" class="fa-regular fa-moon mode" style="color: #ffffff;"></i></li>
+            <!-- Hamburger menu icon -->
+            <li id="menu-icon"><i class="fas fa-bars menu"></i></li>
+        </ul>
+    </nav>
+
+    <div class="main-container background">
+        <div class="product-card-container">
+            <div class="product-card color" data-book-id="<%= book.id %>">
+                <img src="<%= book.image %>" alt="Product Image">
+                <div class="product-card-content">
+                    <h2><%= book.name %></h2>
+                    <p class="product-price">&#8377;<%= book.price %></p>
+                    <p class="product-description"><%= book.description %></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about color">
+            <a href="/viewpdf/<%= book.pdf %>" target="_blank" class="pdf-link">Read PDF</a>
+            <h2>About this book:</h2>
+            <p><%= book.about %></p>
+        </div>
+    </div>
+</body>
+</html>
+
