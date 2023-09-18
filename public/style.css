@@ -147,9 +147,8 @@
     background-color: #000;
     color: #fff;
 }
-
 .dark-mode .product-card {
-    background-color: #585858;
+    background-color: #000000;
     color: #fff;
 }
 .dark-mode #desc{
